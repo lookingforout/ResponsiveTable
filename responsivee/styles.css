@@ -1,0 +1,54 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #fee;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #e66;
+    text-align: left;
+}
+
+thead th {
+    background-color: #d33;
+    color: white;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fdd;
+}
+
+@media screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        margin-bottom: 20px;
+        border: 1px solid #e66;
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        background-color: #fee;
+    }
+
+    td:before {
+        position: absolute;
+        left: 10px;
+        content: attr(data-label);
+        font-weight: bold;
+        color: #d33;
+    }
+}
